@@ -1,0 +1,27 @@
+
+Dsquid:S1066"/Merge this if statement with the enclosing one.(ºŸ÷”
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¨ŸÊ¡˙ˇˇˇˇ
+g
+squid:S134"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(—›‚Ø˚ˇˇˇˇ
+O
+squid:S106";Replace this usage of System.out or System.err by a logger.(¶∑ˇ∆
+O
+squid:S106";Replace this usage of System.out or System.err by a logger.(áá ¬
+T
+squid:S106";Replace this usage of System.out or System.err by a logger.(‹‡√‘˙ˇˇˇˇ
+N
+squid:S106";Replace this usage of System.out or System.err by a logger.(∞≥ë`
+O
+squid:S106";Replace this usage of System.out or System.err by a logger.(Ø’ü
+à squid:MethodCyclomaticComplexity"^The Cyclomatic Complexity of this method "fillData" is 11 which is greater than 10 authorized.(“ÏùØ
+Tsquid:S1481":Remove this unused "fromStringAbbreviated" local variable.(Ë√àè˙ˇˇˇˇ
+gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(“ÏùØ
+Tsquid:S1118":Add a private constructor to hide the implicit public one.(–˝π¢˚ˇˇˇˇ
+?squid:S1166"%Either log or rethrow this exception.(âïèí˛ˇˇˇˇ
+asquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(öÍ≤˘˙ˇˇˇˇ
+[squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(∫Ó´-
+Vsquid:S2275"AFormat specifiers should be used instead of string concatenation.(¶∑ˇ∆
+Vsquid:S2275"AFormat specifiers should be used instead of string concatenation.(áá ¬
+csquid:S1854"IRemove this useless assignment to local variable "fromStringAbbreviated".(Ë√àè˙ˇˇˇˇ
+~squid:S1151"iReduce this switch case number of lines from 7 to at most 5, for example by extracting code into methods.(º∏≤ò
+~squid:S1151"iReduce this switch case number of lines from 7 to at most 5, for example by extracting code into methods.(º∏≤ò
