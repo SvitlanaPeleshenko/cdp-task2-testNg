@@ -13,7 +13,7 @@ import java.net.URL;
  */
 public class RemoteChromeInvoker implements WebDriverInvoker {
     public WebDriver invokeWebDriver() {
-        String hubURL = "http://10.23.10.98:4445/wd/hub";
+        String hubURL = "http://10.23.10.98:4444/wd/hub";
         DesiredCapabilities capability = DesiredCapabilities.chrome();
         WebDriver driver = null;
         try {
