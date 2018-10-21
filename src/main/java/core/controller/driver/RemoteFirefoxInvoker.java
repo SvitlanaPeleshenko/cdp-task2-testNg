@@ -12,17 +12,17 @@ import java.net.URL;
  */
 public class RemoteFirefoxInvoker implements WebDriverInvoker {
 
-        public WebDriver invokeWebDriver() {
-            String hubURL = "http://10.23.10.98:4445/wd/hub";
-            DesiredCapabilities capability = DesiredCapabilities.firefox();
-            capability.setCapability("binary", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
-            WebDriver driver = null;
-            try {
-                driver = new RemoteWebDriver(new URL(hubURL), capability);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            return driver;
+    public WebDriver invokeWebDriver() {
+        String hubURL = "http://10.23.10.98:4445/wd/hub";
+        DesiredCapabilities capability = DesiredCapabilities.firefox();
+        capability.setCapability("binary", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+        WebDriver driver = null;
+        try {
+            driver = new RemoteWebDriver(new URL(hubURL), capability);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
+        return driver;
+    }
 
 }

@@ -1,5 +1,6 @@
 package core.controller.driver;
 
+import core.owner.TestProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -12,15 +13,17 @@ import java.net.URL;
  * Created by Svitlana_Peleshenko on 7/31/2018.
  */
 public class RemoteChromeInvoker implements WebDriverInvoker {
+
     public WebDriver invokeWebDriver() {
-        String hubURL = "http://10.23.10.98:4444/wd/hub";
+        TestProperties properties = TestProperties.getInstance();
+        String hubURL = String.format("%s:%s/wd/hub", properties.selenoidHost(),
+                properties.selenoidPort());
         DesiredCapabilities capability = DesiredCapabilities.chrome();
-        WebDriver driver = null;
         try {
-            driver = new RemoteWebDriver(new URL(hubURL), capability);
+            return new RemoteWebDriver(new URL(hubURL), capability);
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("failed to initialize selenoid chrome driver", e);
         }
-        return driver;
     }
+
 }
