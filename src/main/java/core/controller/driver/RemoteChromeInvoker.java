@@ -16,7 +16,7 @@ public class RemoteChromeInvoker implements WebDriverInvoker {
 
     public WebDriver invokeWebDriver() {
         TestProperties properties = TestProperties.getInstance();
-        String hubURL = String.format("%s:%s", properties.selenoidHost(),
+        String hubURL = String.format("%s:%s/chrome", properties.selenoidHost(),
                 properties.selenoidPort());
         System.out.println("Init remote driver, Hub URL: " + hubURL);
         DesiredCapabilities capability = DesiredCapabilities.chrome();
