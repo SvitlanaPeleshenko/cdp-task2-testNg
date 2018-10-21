@@ -1,5 +1,6 @@
 package core.controller.driver;
 
+import core.owner.TestProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -13,16 +14,17 @@ import java.net.URL;
 public class RemoteFirefoxInvoker implements WebDriverInvoker {
 
     public WebDriver invokeWebDriver() {
-        String hubURL = "http://10.23.10.98:4445/wd/hub";
+        TestProperties properties = TestProperties.getInstance();
+
+        String hubURL = String.format("%s:%s/firefox", properties.selenoidHost(),
+                properties.selenoidPort());
+
         DesiredCapabilities capability = DesiredCapabilities.firefox();
-        capability.setCapability("binary", "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
-        WebDriver driver = null;
         try {
-            driver = new RemoteWebDriver(new URL(hubURL), capability);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+            return new RemoteWebDriver(new URL(hubURL), capability);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to initialize firefox driver", e);
         }
-        return driver;
     }
 
 }
