@@ -12,7 +12,7 @@ public interface TestProperties extends Config {
                         System.getenv());
     }
 
-    @DefaultValue("http://localhost")
+    @DefaultValue("localhost")
     @Key("selenoid.host")
     String selenoidHost();
 
@@ -20,8 +20,20 @@ public interface TestProperties extends Config {
     @Key("selenoid.port")
     String selenoidPort();
 
-    @DefaultValue("LOCAL_CHROME")
-    @Key("selenoid.browser.type")
-    String browserType();
+    @DefaultValue("/wd/hub")
+    @Key("selenoid.context.path")
+    String hubContextPath();
+
+    @DefaultValue("")
+    @Key("selenoid.browser.version")
+    String browserVersion();
+
+    @DefaultValue("chrome")
+    @Key("selenoid.browser.name")
+    String browserName();
+
+    @DefaultValue("false")
+    @Key("selenoid.use.vnc")
+    boolean useVnc();
 
 }
