@@ -10,7 +10,7 @@ public class WebDriverFactory {
 
     public static WebDriver newWebDriver() {
         TestProperties properties = TestProperties.getInstance();
-        SupportedBrowsers browser = SupportedBrowsers.valueOf(properties.browserType());
+        SupportedBrowsers browser = SupportedBrowsers.REMOTE_CHROME;
         return browser.getWebDriver();
     }
 
