@@ -12,7 +12,7 @@ public interface TestProperties extends Config {
                         System.getenv());
     }
 
-    @DefaultValue("localhost")
+    @DefaultValue("http://localhost")
     @Key("selenoid.host")
     String selenoidHost();
 
