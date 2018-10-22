@@ -1,6 +1,7 @@
 package core.controller.driver;
 
 import core.owner.TestProperties;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -21,7 +22,9 @@ public class RemoteDriverInvoker implements WebDriverInvoker {
         System.out.println("Init remote driver, Hub URL: " + hubURL);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName(properties.browserName());
         capabilities.setVersion(properties.browserVersion());
+        capabilities.setPlatform(Platform.ANY);
         capabilities.setCapability("enableVNC", properties.useVnc());
         capabilities.setCapability("enableVideo", false);
 
